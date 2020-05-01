@@ -7,15 +7,14 @@
 
 
 {% block content %}
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="{% static 'css/main_start.css' %}">
 
 
 <div class="content-wrapper">
     <div class="container">
         <div class="row">
-            <div class="icons_line col s12">
+            <div class="icons_line col s12 grey_text">
                 <p class="new">NEW</p>
                 <img src="{% static 'img/likes.svg' %}">
                 25
@@ -25,20 +24,18 @@
                 25
             </div>
         </div>
-
         <div class="row">
-            <div class="col s8">
-                <h3>Почему подросткам стоит изучать программирование?</h3>
+            <div class="col s8 top_text_wrapper">
+                <h3>{{ last_post.head|truncatewords:40 }}</h3>
+                <p class="contenttext" >{{ last_post.body|truncatechars:50 }}</p>
                 <div class="content">
-                    Объясняем почему словосочетание «программирование для подростков» не должно вызывать
-                    скептическую улыбку
-                    и
-                    какие полезные навыки приобретают ребята, изучая программирование.<br>
+                    <br>
+
                     <a class="waves-effect waves-light btn hoverable">Читать</a>
                 </div>
             </div>
             <div class="col s4">
-                <img class="content_illustration" src="{% static 'img/1Statya_3.jpeg' %}">
+                <img class="content_illustration hoverable" src="{{ last_post.img.url }}">
             </div>
         </div>
 
@@ -57,6 +54,7 @@
         </div>
         <div class="row">
             {% for post in page_object.object_list %}
+            {% if post.id != last_post.id %}
             <div class="col s4">
                 <div class="card hoverable small">
                     <div class="card-image">
@@ -67,32 +65,34 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-        {% if is_paginated %}
-        <ul class="pagination">
-            <li class="waves-effect {% if not prev_url %} disabled {% endif %}">
-                <a href="{{ prev_url }}"
-                    tabindex="-1"><i class="material-icons">chevron_left</i></a>
-            </li>
-            {% for page_num in page_object.paginator.page_range %}
-            {% if page_object.number == page_num %}
-            <li class="waves-effect" aria-current="page">
-                <a href="?page={{ page_num }}">{{ page_num }}</a>
-            </li>
-            {% elif page_num > page_object.number|add:-3 and page_num < page_object.number|add:3 %}
-            <li class="waves-effect" aria-current="page">
-                <a href="?page={{ page_num }}">{{ page_num }}</a>
-            </li>
             {% endif %}
             {% endfor %}
-            <li class="waves-effect {% if not next_url %} disabled {% endif %}">
-                <a href="{{ next_url }}"><i class="material-icons">chevron_right</i></a>
-            </li>
+        </div>
+        
+
+        
+
+        {% if is_paginated %}
+        <ul class="pagination">
+            <li class="{% if not prev_url %} disabled {% endif %}"><a href="{{ prev_url }}"><i class="material-icons">chevron_left</i></a></li>
+
+            {% for page_num in page_object.paginator.page_range %}
+            {% if page_object.number == page_num %}
+            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+            {% elif page_num > page_object.number|add:-3 and page_num < page_object.number|add:3 %}
+            <li class="waves-effect"><a href="?page={{ page_num }}">{{ page_num }}</a></li>
+            {% endif %}
+            {% endfor %}
+            <li class="{% if not next_url %} disabled {% endif %}"><a href="{{ next_url }}"><i class="material-icons">chevron_right</i></a></li>
         </ul>
         {% endif %}
+
+
+
+
     </div>
 </div>
+
 
 
 {% endblock %}

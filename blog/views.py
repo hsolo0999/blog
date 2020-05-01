@@ -10,6 +10,7 @@ from django.urls import reverse
 
 def posts_show(request):
     posts = PostModel.objects.all()
+    last_post = PostModel.objects.first()
     paginator = Paginator(posts, 4)
     page_num = request.GET.get('page', 1)
     page = paginator.get_page(page_num)
@@ -30,6 +31,7 @@ def posts_show(request):
         'is_paginated': is_paginated,
         'next_url': next_url,
         'prev_url': prev_url,
+        'last_post': last_post,
     }
 
     return render(request, 'main/start.html', context=context)

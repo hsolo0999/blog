@@ -17,8 +17,6 @@ class PostForm(forms.ModelForm):
                                             'placeholder': 'Введите название статьи'}),
 
                 'body': forms.Textarea(attrs={
-                                            'class': 'materialize-textarea',
-                                            'placeholder': 'Что у Вас интересного?',
                                             'contenteditable': 'true'}),
                                             
 

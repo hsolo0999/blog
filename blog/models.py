@@ -14,8 +14,8 @@ def slug_generator(stroka):
 
 
 class PostModel(models.Model):
-    slug = models.SlugField(max_length=100, unique=True, blank=True)
-    head = models.TextField(max_length=100, db_index=True)
+    slug = models.SlugField(max_length=200, unique=True, blank=True)
+    head = models.TextField(max_length=200, db_index=True)
     body = models.TextField(blank=True)
     img = models.ImageField(upload_to='blog_imgs/')
     created = models.DateTimeField(auto_now_add=True)

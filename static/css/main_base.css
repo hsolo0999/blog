@@ -1,17 +1,95 @@
+/*MAIN styles*/
+
 body {
-    background: #ffffff
+    background-color: #ffffff;
 }
 
-.uchenik {
-    border: #010101 solid 2px;
-    border-radius: 50%;
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto Slab', serif;
+    color: #010101;
+    font-weight: normal;
 }
 
-nav li {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 10px;
+h1 {
+    font-size: 72px;
+    line-height: 86px;
 }
+
+h2 {
+    font-size: 64px;
+    line-height: 77px;
+}
+
+h3 {
+    font-size: 48px;
+    line-height: 58px;
+    color: #315AF2;
+}
+
+h4 {
+    font-size: 36px;
+    line-height: 43px;
+    color: #315AF2;
+}
+
+h5 {
+    font-size: 24px;
+    line-height: 29px;
+    color: #315AF2;
+    font-weight: bolder;
+    font-family: 'Roboto Slab', serif;
+}
+
+.nav-menu_text {
+    font-size: 24px;
+    color: #010101;
+}
+
+.contenttext {
+    font-family: 'Comfortaa', cursive;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/*secondary text*/
+
+.grey_text {
+    font-family: 'Comfortaa', cursive;
+    font-size: 12px;
+    color: #979797;
+}
+
+.placeholder {
+    color: #C4C4C4;
+    font-size: 24px;
+}
+
+/*button styles*/
+
+.public_btn {
+    background-color: #E9399C;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.btn {
+    margin-top: 2%;
+    background-color: #315AF2;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: 'Roboto Slab', serif;
+    -moz-transition: background-color 0.4s 0.1s ease;
+    -o-transition: background-color 0.4s 0.1s ease;
+    -webkit-transition: background-color 0.4s 0.1s ease;
+}
+
+.btn:hover {
+    background-color: rgb(22, 70, 241);
+    cursor: pointer;
+}
+
+/*nav-menu styles*/
 
 nav {
     background-color: #ffffff;
@@ -23,28 +101,49 @@ nav {
     margin-left: 2%;
 }
 
-.justify-menu {
-    margin-left: 15%;
-}
-
-.justify-menu a {
-    font-family: 'Raleway', sans-serif;
-    font-weight: bold;
-    color: black;
-    font-size: 24px;
-}
-
 .logo {
     width: 190px;
     height: auto;
     margin-top: 4px;
 }
 
-.round_icons {
-    margin-top: 15px;
+.brand-logo li {
+    padding-top: 10px;
 }
 
-.nav-wrapper {
-    box-shadow: none;
-    border: none;
+.nav_link {
+    margin-left: 15%;
+}
+
+.nav_link li {
+    margin: 10px;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.nav_link li a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+}
+
+.right {
+    width: 15%;
+}
+
+.nav_right_icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_right_icons li {
+    margin-top: 10px;
+}
+
+.circle_border {
+    border: #010101 solid 2px;
+    border-radius: 50%;
 }

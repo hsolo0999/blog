@@ -5,6 +5,8 @@
 <head>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap" rel="stylesheet">
     <!--Import materialize.css-->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -14,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/main_base.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap" rel="stylesheet">
 
     <title>
         {% block title_content %}
@@ -28,17 +30,19 @@
         <div class="navbar-fixed">
             <nav>
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo"><img class="logo" src="{% static 'img/logo.png' %}" alt="LogoKodland"></a>
-                    <ul class="hide-on-med-and-down justify-menu">
-                        <li><a href="{% url 'posts_show' %}">Блог</a></li>
+                    <ul class="hide-on-med-and-down brand-logo">
+                        <li><img class="logo" src="{% static 'img/logo.png' %}" alt="LogoKodland"></a></li>
                     </ul>
-                    <ul class="hide-on-med-and-down justify-menu">
-                            <li><a href="{% url 'post_create' %}">Создать статью</a></li>
-                        </ul>
-                    <ul class="right hide-on-med-and-down">
-                            <li><img class="round_icons" src="{% static 'img/email.svg' %}" width="31" height="31"></li>
-                            <li><img class="uchenik" src="{% static 'img/icon_1.png' %}" width="70" height="70"></li>
-                            <li><img class="round_icons" src="{% static 'img/logout.svg' %}" width="31" height="31"></li>
+                    <ul class="hide-on-med-and-down nav_link">
+                        <li><a class="nav-menu_text" href="{% url 'posts_show' %}">Блог</a></li>
+                    </ul>
+                    <ul class="hide-on-med-and-down nav_link">
+                        <li><a class="nav-menu_text" href="{% url 'post_create' %}">Создать статью</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down nav_right_icons">
+                        <li><img class="" src="{% static 'img/email.svg' %}" width="31" height="31"></li>
+                        <li><img class="circle_border" src="{% static 'img/icon_1.png' %}" width="70" height="70"></li>
+                        <li><img class="" src="{% static 'img/logout.svg' %}" width="31" height="31"></li>
                     </ul>
 
                 </div>

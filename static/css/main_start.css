@@ -1,5 +1,23 @@
 .content-wrapper {
-    margin-top: 2%;
+    margin-top: 90px;
+}
+
+/*Icons style */
+
+.icons_line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 16px;
+    line-height: 20px;
+    color: #CDCDCD;
+    max-width: 25%;
+    display: flex;
+    justify-content: flex-start
+}
+
+.icons_line img {
+    margin-left: 10px;
 }
 
 .new {
@@ -14,81 +32,37 @@
     margin-right: 7px;
 }
 
-.icons_line {
-    font-size: 16px;
-    line-height: 20px;
-    color: #CDCDCD;
-    max-width: 25%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start
-}
+/*Main content style */
 
-.icons_line img {
-    margin-left: 10px;
-}
-
-h3 {
-    color: #315AF2;
-    font-weight: bolder;
-    font-size: 45px;
-    line-height: 52px;
-    font-family: 'Roboto Slab', serif;
-}
-
-.content {
-    font-size: 16px;
-    line-height: 22px;
-    font-family: 'Comfortaa', cursive;
+.top_text_wrapper {
+    overflow: hidden;
 }
 
 .content_illustration {
     max-width: 150%;
     width: auto;
     height: 320px;
-}
-
-.btn {
-    margin-top: 2%;
-    font-weight: bolder;
-    font-size: 20px;
-    background-color: #315AF2;
-    font-family: 'Roboto Slab', serif;
-    -moz-transition: background-color 0.4s 0.1s ease;
-    -o-transition: background-color 0.4s 0.1s ease;
-    -webkit-transition: background-color 0.4s 0.1s ease;
-}
-
-.btn:hover {
-    background-color: rgb(22, 70, 241);
-    cursor: pointer;
-}
-
-h5 {
-    font-size: 36px;
-    color: #315AF2;
-    font-weight: bolder;
-    font-family: 'Roboto Slab', serif;
+    border-radius: 10px;
 }
 
 hr {
-    border: none; /* Убираем границу для браузера Firefox */
-    color: #CDCDCD; /* Цвет линии для остальных браузеров */
-    background-color: #CDCDCD; /* Цвет линии для браузера Firefox и Opera */
-    height: 2px; /* Толщина линии */
+    border: none;
+    color: #CDCDCD;
+    background-color: #CDCDCD;
+    height: 2px;
 
     border: 0;
     height: 1px;
     }
 
-    .card {
-        width: 100%;
-        max-height: 300px;
-        min-height: 100px;
-        height: 30%;
-    }
-    
-    .card-image img {
-        max-height: 70%;
-        width: auto;
-    }
+.card {
+    width: 100%;
+    max-height: 300px;
+    min-height: 100px;
+    height: 30%;
+}
+
+.card-image img {
+    max-height: 70%;
+    width: auto;
+}
