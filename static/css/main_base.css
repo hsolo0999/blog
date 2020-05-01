@@ -4,7 +4,6 @@ body {
     background-color: #ffffff;
 }
 
-
 h1, h2, h3, h4, h5 {
     font-family: 'Roboto Slab', serif;
     color: #010101;
@@ -67,21 +66,20 @@ h5 {
 
 /*button styles*/
 
-.public_btn {
-    background-color: #E9399C;
-    font-size: 18px;
-    font-weight: 900;
-}
-
 .btn {
     margin-top: 2%;
     background-color: #315AF2;
     font-size: 18px;
     font-weight: 900;
     font-family: 'Roboto Slab', serif;
+    text-align: center;
     -moz-transition: background-color 0.4s 0.1s ease;
     -o-transition: background-color 0.4s 0.1s ease;
     -webkit-transition: background-color 0.4s 0.1s ease;
+}
+
+.public_btn {
+    background-color: #E9399C;
 }
 
 .btn:hover {
@@ -130,6 +128,7 @@ nav {
 
 .right {
     width: 15%;
+    margin-right: 10px;
 }
 
 .nav_right_icons {

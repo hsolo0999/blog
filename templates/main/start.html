@@ -57,6 +57,7 @@
             {% if post.id != last_post.id %}
             <div class="col s4">
                 <div class="card hoverable small">
+                    <div class="created grey_text">{{ post.created }}</div>
                     <div class="card-image">
                         <img src="{{ post.img.url }}">
                     </div>

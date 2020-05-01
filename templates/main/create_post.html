@@ -18,78 +18,84 @@
 
 <div class="content-wrapper">
     <div class="container">
+
         <div class="row">
-            <div class="col s8">
+            <div class="col s8 content_wrapper">
                 <h3>Добавить статью</h3>
             </div>
         </div>
-        <form action="{% url 'post_create' %}" enctype="multipart/form-data" method="POST" id="mainform">
-            {% csrf_token %}
-            <div class="row">
 
-                <div class="col s8">
-                    {% for field in form %}
-                    {% if field.errors %}
-                    <div class="alert alert-danger" role="alert">{{ field.errors }}</div>
-                    {% endif %}
-                    {% if field.label == 'input-head' %}
-                    <div id="head">{{ field }}</div>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col s4">
-                    <button class="btn publicate" type="submit" form="mainform">Опубликовать</button>
-                </div>
+        <div class="row">
+            <form action="{% url 'post_create' %}" enctype="multipart/form-data" method="POST" id="mainform"
+                class="feedback-form-1">
+                {% csrf_token %}</form>
 
-            </div>
-            <div class="row">
-                <div class="col s8">
-                    {% for field in form %}
-                    {% if field.errors %}
-                    <div class="alert alert-danger" role="alert">{{ field.errors }}</div>
-                    {% endif %}
-                    {% if field.label == 'input-body' %}
-                    <div class="input-body">
-                        <div class="toolbar">
-                            <a href="#" data-command='bold'><i class='fa fa-bold'></i></a>
-                            <a href="#" data-command='underline'><i class='fa fa-underline'></i></a>
-                            <a href="#" data-command='justifyLeft'><i class='fa fa-align-left'></i></a>
-                            <a href="#" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
-                            <a href="#" data-command='justifyRight'><i class='fa fa-align-right'></i></a>
-                            <a href="#" data-command='indent'><i class='fa fa-indent'></i></a>
-                            <a href="#" data-command='outdent'><i class='fa fa-outdent'></i></a>
-                            <a href="#" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a>
-                            <a href="#" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a>
-                            <a href="#" data-command='createlink'><i class='fa fa-link'></i></a>
-                            <a href="#" data-command='unlink'><i class='fa fa-unlink'></i></a>
-                            <a href="#" data-command='insertimage'><i class='fa fa-image'></i></a>
-                            <a href="#" data-command='subscript'><i class='fa fa-subscript'></i></a>
-                            <a href="#" data-command='superscript'><i class='fa fa-superscript'></i></a>
-                        </div>
-                        <div id="editor" contenteditable="true">{{ field }}</div>
-                    </div>
-                </div>
-                {% elif field.label == 'img-input' %}
-                <div class="col s4">
-                    <div class="upload_wrapper">
-                        <h5>Загрузить изображение</h5>
-                        <div class="btn file-upload">
-
-                            <label>
-                                {{ field }}
-                                <span>Выбрать</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+            <div class="col s8">
+                {% for field in form %}
+                {% if field.errors %}
+                <div class="alert alert-danger" role="alert">{{ field.errors }}</div>
+                {% endif %}
+                {% if field.label == 'input-head' %}
+                <div id="head">{{ field }}</div>
                 {% endif %}
                 {% endfor %}
-
             </div>
-        </form>
+            <div class="col s4">
+                <button class="btn publicate public_btn" type="submit" form="mainform">Опубликовать</button>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col s8">
+                {% for field in form %}
+                {% if field.errors %}
+                <div class="alert alert-danger" role="alert">{{ field.errors }}</div>
+                {% endif %}
+                {% if field.label == 'input-body' %}
+                <div class="input-body">
+                    <div class="toolbar">
+                        <a href="#" data-command='bold'><i class='fa fa-bold'></i></a>
+                        <a href="#" data-command='underline'><i class='fa fa-underline'></i></a>
+                        <a href="#" data-command='justifyLeft'><i class='fa fa-align-left'></i></a>
+                        <a href="#" data-command='justifyCenter'><i class='fa fa-align-center'></i></a>
+                        <a href="#" data-command='justifyRight'><i class='fa fa-align-right'></i></a>
+                        <a href="#" data-command='indent'><i class='fa fa-indent'></i></a>
+                        <a href="#" data-command='outdent'><i class='fa fa-outdent'></i></a>
+                        <a href="#" data-command='insertUnorderedList'><i class='fa fa-list-ul'></i></a>
+                        <a href="#" data-command='insertOrderedList'><i class='fa fa-list-ol'></i></a>
+                        <a href="#" data-command='createlink'><i class='fa fa-link'></i></a>
+                        <a href="#" data-command='insertimage'><i class='fa fa-image'></i></a>
+                        <a href="#" data-command='subscript'><i class='fa fa-subscript'></i></a>
+                        <a href="#" data-command='superscript'><i class='fa fa-superscript'></i></a>
+                    </div>
+                    <div id="editor" contenteditable="true">{{ field }}</div>
+                </div>
+            </div>
+
+
+            {% elif field.label == 'input-img' %}
+            <div class="col s4">
+                <div class="upload_wrapper">
+                    <div class="preview">
+                        <img id="image" src="#" alt="" />
+                    </div>
+                    <div class="file-upload">
+                        <label class="hoverable">
+                            {{ field }}
+                            <span>Выбрать</span>
+                        </label>
+                    </div>
+                    
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+        </div>
     </div>
 </div>
 
-
+<script src="{% static 'js/script.js' %}"></script>
 
 {% endblock %}

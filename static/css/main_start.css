@@ -66,3 +66,8 @@ hr {
     max-height: 70%;
     width: auto;
 }
+
+.created {
+    margin: 3%;
+    padding-top: 3%; 
+}

@@ -10,19 +10,27 @@ class PostForm(forms.ModelForm):
         fields = ('head', 'body', 'img')
         labels = {'head': ('input-head'),
         'body': ('input-body'),
-        'img': ('img-input'),}
+        'img': ('input-img'),}
         widgets = {
                 'head': forms.TextInput(attrs={
-                                            'class': 'input-head',
-                                            'placeholder': 'Введите название статьи'}),
+                                            'class': 'input-head inform',
+                                            'placeholder': 'Введите название статьи',
+                                            'form': 'mainform'
+                                            }),
 
                 'body': forms.Textarea(attrs={
-                                            'contenteditable': 'true'}),
+                                            'class': 'input-body inform',
+                                            'contenteditable': 'true',
+                                            'form': 'mainform'
+                                            }),
                                             
 
                 'img': forms.FileInput(attrs={
+                                            'class': 'input-img photo',
                                             'type': 'file',
-                                            'id': 'uploade-file',
+                                            'id': 'imgInput',
+                                            'name': 'pic[]',
+                                            'form': 'mainform'
                                             }),
                 }
                 
