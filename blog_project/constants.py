@@ -1,6 +1,11 @@
 class Const:
     SECRET_KEY = 'v^a^xoxveyk^q@u#39-wz$i#b=)-kgn2_@+qwa0zs$jst9)9z='
+
+    #on/off debug mode
+    DEBUG = True
     
+
+    #add data here to connect your database in prodaction
     DBNAME = None
     DBUSER = None
     DBPASSWORD = None

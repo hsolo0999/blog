@@ -1,5 +1,37 @@
 from .models import PostModel
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator
+
+
+
+class ShowCtrl:
+    def get(self, request):
+        posts = PostModel.objects.all()
+        last_post = PostModel.objects.first()
+        paginator = Paginator(posts, 4)
+        page_num = request.GET.get('page', 1)
+        page = paginator.get_page(page_num)
+        is_paginated = page.has_other_pages() #если есть другие страницы True else False
+
+        if page.has_previous():
+            prev_url = f'?page={page.previous_page_number()}'
+        else:
+            prev_url = ''
+
+        if page.has_next():
+            next_url = f'?page={page.next_page_number()}'
+        else:
+            next_url = ''
+
+        context={
+            'page_object': page,
+            'is_paginated': is_paginated,
+            'next_url': next_url,
+            'prev_url': prev_url,
+            'last_post': last_post,
+        }
+
+        return render(request, 'main/start.html', context=context)
 
 
 
