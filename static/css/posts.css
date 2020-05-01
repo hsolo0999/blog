@@ -1,0 +1,40 @@
+
+h1 {
+    position: absolute;
+    width: 672px;
+    height: 104px;
+    left: 194px;
+    top: 244px;
+
+    font-family: Museo Cyrl;
+    font-size: 45px;
+    line-height: 52px;
+
+    /* or 116% */
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.416667px;
+
+    color: #315AF2;
+}
+
+.image {
+    position: absolute;
+    width: 624px;
+    height: 568px;
+    left: 793px;
+    top: 185px;
+
+    background: url(1Statya_3.jpg);
+}
+
+.button {
+    position: absolute;
+    width: 168px;
+    height: 68px;
+    left: 194px;
+    top: 475px;
+
+    background: #315AF2;
+    border-radius: 3px;
+}

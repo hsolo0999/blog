@@ -1,0 +1,5 @@
+*~
+/blog_project/__pycache__/
+/blog/__pycache__/
+.vscode/*
+venv/

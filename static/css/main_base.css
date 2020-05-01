@@ -1,0 +1,50 @@
+body {
+    background: #ffffff
+}
+
+.uchenik {
+    border: #010101 solid 2px;
+    border-radius: 50%;
+}
+
+nav li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px;
+}
+
+nav {
+    background-color: #ffffff;
+    height: 90px;
+}
+
+.brand-logo {
+    float: left;
+    margin-left: 2%;
+}
+
+.justify-menu {
+    margin-left: 15%;
+}
+
+.justify-menu a {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 24px;
+}
+
+.logo {
+    width: 190px;
+    height: auto;
+    margin-top: 4px;
+}
+
+.round_icons {
+    margin-top: 15px;
+}
+
+.nav-wrapper {
+    box-shadow: none;
+    border: none;
+}

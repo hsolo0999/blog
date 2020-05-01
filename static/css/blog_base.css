@@ -1,0 +1,18 @@
+body {
+    background: #e7e7e7;
+}
+
+nav {
+    font-family: Circe Rounded;
+    background: #ffffff;
+    font-family: Circe Rounded;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.nav-link {
+    color: #010101;
+    vertical-align: middle;
+}
+
+
