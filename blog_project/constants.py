@@ -1,5 +1,8 @@
+import os
+
 class Const:
     SECRET_KEY = 'v^a^xoxveyk^q@u#39-wz$i#b=)-kgn2_@+qwa0zs$jst9)9z='
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
     #on/off debug mode
     DEBUG = True
@@ -14,14 +17,10 @@ class Const:
 
 
     DATABASES_DEBUG = {
-    'default': {
-                'ENGINE': 'django.db.backends.postgresql_psycopg2',
-                'NAME': 'blog_db',
-                'USER' : 'blog_user',
-                'PASSWORD' : 'qwerty',
-                'HOST' : '127.0.0.1',
-                'PORT' : '5432',
-                }
+	'default': {
+			    'ENGINE': 'django.db.backends.sqlite3',
+			    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+				}
     }
 
     DATABASES_PROD = {

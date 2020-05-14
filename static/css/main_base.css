@@ -100,9 +100,9 @@ nav {
 }
 
 .logo {
-    width: 190px;
+    width: 100px;
     height: auto;
-    margin-top: 4px;
+    margin: 4px;
 }
 
 .brand-logo li {
@@ -124,25 +124,4 @@ nav {
     font-weight: bold;
     color: black;
     font-size: 24px;
-}
-
-.right {
-    width: 15%;
-    margin-right: 10px;
-}
-
-.nav_right_icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav_right_icons li {
-    margin-top: 10px;
-}
-
-.circle_border {
-    border: #010101 solid 2px;
-    border-radius: 50%;
 }
